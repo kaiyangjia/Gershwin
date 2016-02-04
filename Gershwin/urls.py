@@ -22,7 +22,7 @@ import UserManage
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/interface', include('InterfaceManage.urls')),
+    url(r'^api/interface/', include('InterfaceManage.urls')),
     # url(r'^api/check', include('InterfaceCheck.urls')),
     # url(r'^api/test', include('TestData.urls')),
     # url(r'^api/auth', include('UserManage.urls')),

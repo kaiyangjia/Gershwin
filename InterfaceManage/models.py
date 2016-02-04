@@ -120,6 +120,15 @@ class DjangoSession(models.Model):
         db_table = 'django_session'
 
 
+class ItDictTypeUser(models.Model):
+    name = models.CharField(max_length=255, blank=True, null=True)
+    code = models.IntegerField()
+
+    class Meta:
+        managed = False
+        db_table = 'it_dict_type_user'
+
+
 class ItInterface(models.Model):
     module_id = models.IntegerField(blank=True, null=True)
     create_user = models.IntegerField(blank=True, null=True)
@@ -154,7 +163,8 @@ class ItModule(models.Model):
 
 
 class ItProject(models.Model):
-    create_user = models.CharField(max_length=255, blank=True, null=True)
+    name = models.CharField(max_length=255, blank=True, null=True)
+    create_user = models.IntegerField(blank=True, null=True)
     create_time = models.DateTimeField(blank=True, null=True)
 
     class Meta:
@@ -170,3 +180,14 @@ class ItRecord(models.Model):
     class Meta:
         managed = False
         db_table = 'it_record'
+
+
+class ItRelaUserProject(models.Model):
+    user_id = models.IntegerField(blank=True, null=True)
+    project_id = models.IntegerField(blank=True, null=True)
+    create_time = models.DateTimeField(blank=True, null=True)
+    user_code = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'it_rela_user_project'

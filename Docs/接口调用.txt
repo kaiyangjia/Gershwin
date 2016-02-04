@@ -1,0 +1,17 @@
+项目管理相关：
+
+1、/api/interface/project
+   接口说明：根据 项目的id / 项目创建者的id  获取项目的信息
+   方法：GET
+   参数：id / create_user（选其一）
+   参数说明：
+        id ： 项目的id，获取id为该值的项目
+        create_user ：为项目创建者的id，获取项目创建者为该值的项目
+
+
+2、/api/interface/project/list user_id
+   接口说明：根据 用户的id 获取该用户创建的和参与的所有项目的列表
+   方法：GET
+   参数：user_id （必选）
+   参数说明：
+        user_id ： 用户的id
